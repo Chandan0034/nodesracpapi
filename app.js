@@ -16,7 +16,7 @@ app.get('/get_video_src', async (req, res) => {
 
   try {
     req.setTimeout(60000)
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({headless: true});
     const page = await browser.newPage();
 
     await page.goto(websiteLink);
